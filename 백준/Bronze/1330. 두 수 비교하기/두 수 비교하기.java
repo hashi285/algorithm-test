@@ -1,17 +1,26 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int A = sc.nextInt();
-        int B = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        if(A == B){
-            System.out.println("==");
-        }else if(A < B){
-            System.out.println("<");
-        }else {
-            System.out.println(">");
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        
+        if (n < m ){
+            bw.write("<" +"\n");
+        } else if (n == m) {
+            bw.write("==" + "\n");
+            
+        } else if (n > m) {
+            bw.write(">" + "\n");
         }
+        bw.flush();
+        bw.close();
+
     }
+
 }
