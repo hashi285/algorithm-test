@@ -1,22 +1,24 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int A = scanner.nextInt();
-        if(A>=90){
-            System.out.println("A");
-        }else if (A>=80){
-            System.out.println("B");
-        } else if (A>=70) {
-            System.out.println("C");
-        } else if (A>=60) {
-            System.out.println("D");
-        }else {
-            System.out.println("F");
-        }
+        int a = Integer.parseInt(br.readLine());
 
-
+        if (a >= 90)
+            bw.write("A" + "\n");
+        else if (a >= 80) {
+            bw.write("B" + "\n");
+        } else if (a >= 70) {
+            bw.write("C" + "\n");
+        } else if (a >= 60) {
+            bw.write("D" + "\n");
+        } else if (a < 60)
+            bw.write("F" + "\n");
+        
+                bw.flush();
+        bw.close();
     }
 }
