@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -20,16 +21,16 @@ public class Main {
         int left = m; // 철사평균을 구할 배열의 첫 부분
         int right = a - m - 1; // 철사평균을 구할 배열의 마지막 부분
         double k = 0; // 철사평균에 들어가는 값을 모두 합한 값
-        double i = 0;
+        double i = 0; // 철사평균에 들어가는 값의 수
 
-        while (left <= right){
+        while (left <= right){ // 철사평균에 들어가는 수를 모두 합한다.
             k += b[left];
             left++;
             i++;
         }
 
 
-        int ii = (int)Math.round(k/i);
+        int ii = (int)Math.round(k/i); // double 형의 평균 값을 int 형으로 변환
 
         bw.write(ii + "\n");
         bw.flush();
